@@ -38,10 +38,6 @@ func main() {
 			userMoving = false
 		}
 	})
-	hook.Register(hook.KeyDown, []string{robotgo.Esc}, func(event hook.Event) {
-		fmt.Println("User pressed ESC, exit now ...")
-		os.Exit(0)
-	})
 	go moveListener(timer)
 
 	sig := make(chan os.Signal, 1)
@@ -65,7 +61,7 @@ func moveMouse() {
 		robotgo.MoveRelative(-1, -1)
 		isRunning = true
 		fish++
-		fmt.Printf("Caught %d fish in %v.\n", fish, time.Now().Sub(start))
+		fmt.Printf("Caught %d fish in %v，start from: %v\n", fish, time.Now().Sub(start), start.String())
 	}
 }
 
