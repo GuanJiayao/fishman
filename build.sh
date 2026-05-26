@@ -30,7 +30,7 @@ echo "[2/2] Building for Windows AMD64..."
 CC=x86_64-w64-mingw32-gcc
 CGO_ENABLED=1 GOOS=windows GOARCH=amd64 CC="$CC" \
   go build -trimpath \
-    -ldflags="-s -w -H windowsgui -extldflags=-static -X 'main.version=${VERSION}'" \
+    -ldflags="-s -w -extldflags=-static -X 'main.version=${VERSION}'" \
     -o "$DIST_DIR/${FISHMAN_NAME}-x64.exe" \
     "$PROJECT_DIR/main.go"
 echo "  -> dist/${FISHMAN_NAME}-x64.exe  ($(ls -lh "$DIST_DIR/${FISHMAN_NAME}-x64.exe" | awk '{print $5}'))"
