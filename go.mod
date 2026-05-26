@@ -30,3 +30,6 @@ require (
 	golang.org/x/image v0.12.0 // indirect
 	golang.org/x/sys v0.12.0 // indirect
 )
+
+replace github.com/kbinani/screenshot v0.0.0-20230812210009-b87d31814237 => ./local/kbinani/screenshot
+replace github.com/go-vgo/robotgo v0.110.0 => ./local/go-vgo/robotgo

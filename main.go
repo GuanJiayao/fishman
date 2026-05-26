@@ -17,9 +17,16 @@ var (
 	fish       = 0
 	start      = time.Now()
 	duration   = 3 * time.Second
+	version    = "devbuild"
 )
 
 func main() {
+	// Check for version flag
+	if len(os.Args) > 1 && (os.Args[1] == "-v" || os.Args[1] == "--version") {
+		fmt.Println(version)
+		return
+	}
+
 	fmt.Println(`
 ┌─┐┬┌─┐┬ ┬┌┬┐┌─┐┌┐┌
 ├┤ │└─┐├─┤│││├─┤│││
